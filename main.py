@@ -1,6 +1,162 @@
 import requests
 from bs4 import BeautifulSoup
 
+championNames = [
+  'Aatrox'
+  ',
+  'Ahri',
+  'Akali',
+  'Alistar',
+  'Amumu',
+  'Anivia',
+  'Annie',
+  'Ashe',
+  'Aurelion Sol',
+  'Azir',
+  'Bard',
+  'Blitzcrank',
+  'Brand',
+  'Braum',
+  'Caitlyn',
+  'Camille',
+  'Cassiopeia',
+  'ChoGath',
+  'chogath',
+  'Corki',
+  'Darius',
+  'Diana',
+  'Dr.Mundo',
+  'mundo',
+  'Draven',
+  'Ekko',
+  'Elise',
+  'Evelynn',
+  'Ezreal',
+  'Fiddlesticks',
+  'Fiora',
+  'Fizz',
+  'Galio',
+  'Gangplank',
+  'Garen',
+  'Gnar',
+  'Gragas',
+  'Graves',
+  'Hecarim',
+  'Heimerdinger',
+  'Illaoi',
+  'Irelia',
+  'Ivern',
+  'Janna',
+  'Jarvan',
+  'jarvan',
+  'Jax',
+  'Jayce',
+  'Jhin',
+  'Jinx',
+  'KaiSa',
+  'Kalista',
+  'Karma',
+  'Karthus',
+  'Kassadin',
+  'Katarina',
+  'Kayle',
+  'Kayn',
+  'Kennen',
+  'KhaZix',
+  'khazix',
+  'Kindred',
+  'Kled',
+  'KogMaw',
+  'kogmaw',
+  'LeBlanc',
+  'Lee Sin',
+  'Leona',
+  'Lissandra',
+  'Lucian',
+  'Lulu',
+  'Lux',
+  'Malphite',
+  'Malzahar',
+  'Maokai',
+  'Master Yi',
+  'Miss Fortune',
+  'Mordekaiser',
+  'Morgana',
+  'Nami',
+  'Nasus',
+  'Nautilus',
+  'Neeko',
+  'Nidalee',
+  'Nocturne',
+  'Nunu',
+  'Olaf',
+  'Orianna',
+  'Ornn',
+  'Pantheon',
+  'Poppy',
+  'Pyke',
+  'Qiyana',
+  'Quinn',
+  'Rakan',
+  'Rammus',
+  'RekSai',
+  'reksai',
+  'Renekton',
+  'Rengar',
+  'Riven',
+  'Rumble',
+  'Ryze',
+  'Sejuani',
+  'Shaco',
+  'Shen',
+  'Shyvana',
+  'Singed',
+  'Sion',
+  'Sivir',
+  'Skarner',
+  'Sona',
+  'Soraka',
+  'Swain',
+  'Sylas',
+  'Syndra',
+  'Tahm Kench',
+  'Taliyah',
+  'Talon',
+  'Taric',
+  'Teemo',
+  'Thresh',
+  'Tristana',
+  'Trundle',
+  'Tryndamer',
+  'Twisted Fate',
+  'Twitch',
+  'Udyr',
+  'Urgot',
+  'Varus',
+  'Vayne',
+  'Veigar',
+  'VelKoz',
+  'velkoz',
+  'Vi',
+  'Viktor',
+  'Vladimir',
+  'Volibear',
+  'Warwick',
+  'Wukong',
+  'Xayah',
+  'Xerath',
+  'Xin Zhao',
+  'Yasuo',
+  'Yorick',
+  'Yuumi',
+  'Zac',
+  'Zed',
+  'Ziggs',
+  'Zilean',
+  'Zoe',
+  'Zyra',
+]
+
 def getWebpage(champion):
    url = 'https://rankedboost.com/league-of-legends/counter/' + champion
 
@@ -11,8 +167,6 @@ def getWebpage(champion):
    return getCounterChampions(page)
 
 def getCounterChampions(page):
-     # Parses LoLProfile champion webpage to find the counter
-     # # champions given the lane you are playing that champion in
      champList = []
 
      soup = BeautifulSoup(page.text, 'html.parser')
@@ -27,15 +181,11 @@ def getCounterChampions(page):
      return formatChampList(champList)
 
 def getWinPlayBanRate(page):
-     # Parses LoLProfile champion webpage to find the counter
-     # # champions given the lane you are playing that champion in
-     statsList = []
-
      soup = BeautifulSoup(page.text, 'html.parser')
 
-     stats = soup.find_all(class_='WinRateStat', string = True)
+     stats = soup.find_all(class_='StatsTD', string = True)
 
-     print(champName + " has a " + statsList[0].text + " winrate, " + statsList[1].text + " pick rate, " + statsList[2].text + " ban rate.")
+     print(champName + " has a " + stats[0].text + " winrate, " + stats[1].text + " pick rate, " + stats[2].text + " ban rate.")
 
 
 def formatChampList(champList):
@@ -51,10 +201,13 @@ def formatChampList(champList):
         counter += 1
 
     print(champName + " is Strong against these champions: " + ", ".join(strongAgainst))
-    print()
-    print(champName + " is weak against these champions: " + ", ".join(weakAgainst))
+    print(champName + " is Weak against these champions: " + ", ".join(weakAgainst))
  
 print()
-champName = input('Enter your champions name: ')
+while(True)
+    champName = input('Enter a valid champion name: ')
+    if champName in championNames
+        break
 print()
 getWebpage(champName)
+
