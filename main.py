@@ -5,12 +5,15 @@ championNames=[
 'aatrox','ahri','akali','alistar','amumu','anivia','annie','ashe','aurelion sol','azir','bard','blitzcrank','brand','braum','caitlyn','camille','cassiopeia',
 'choGath','chogath','corki','darius','diana','dr.Mundo','mundo','draven','ekko','elise','evelynn','ezreal','fiddlesticks','fiora','fizz','galio','gangplank','garen','gnar',
 'gragas','graves','hecarim','heimerdinger','illaoi','irelia','ivern','janna','jarvan','jarvan','jax','jayce','jhin','jinx','kaiSa','kalista','karma','karthus','kassadin',
-'katarina','kayle','kayn','kennen','khazix','kindred','kled','kogMaw','kogmaw','leblanc','leesin','leona','lissandra','lucian','lulu','lux','malphite','malzahar','maokai',
+'katarina','kayle','kayn','kennen','kha\'zix','kindred','kled','kog \'maw','kogmaw','leblanc','lee sin','leona','lissandra','lucian','lulu','lux','malphite','malzahar','maokai',
 'master yi','miss fortune','mordekaiser','morgana','nami','nasus','nautilus','neeko','nidalee','nocturne','nunu','olaf','orianna','ornn','pantheon','poppy','pyke','qiyana',
 'quinn','rakan','rammus','reksai','renekton','rengar','riven','rumble','ryze','sejuani','shaco','shen','shyvana','singed','sion','sivir','skarner','sona','soraka','swain',
-'sylas','syndra','tahm kench','taliyah','talon','taric','teemo','thresh','tristana','trundle','tryndamer','twisted fate','twitch','udyr','urgot','varus','vayne','veigar',
+'sylas','syndra','tahm kench','taliyah','talon','taric','teemo','thresh','tristana','trundle','tryndamere','twisted fate','twitch','udyr','urgot','varus','vayne','veigar',
 'velKoz','velkoz','vi','viktor','vladimir','volibear','warwick','wukong','wayah','werath','xin zhao','yasuo','yorick','yuumi','zac','zed','ziggs','zilean','zoe','zyra'
 ]
+
+validChampion = True
+menu          = True
 
 def getWebpage(champion):
    url = 'https://rankedboost.com/league-of-legends/counter/' + champion
@@ -57,11 +60,15 @@ def formatChampList(champList):
 
     print(champName + " is Strong against these champions: " + ", ".join(strongAgainst))
     print(champName + " is Weak against these champions: " + ", ".join(weakAgainst))
- 
-print()
-while(True)
-    champName = input('Enter a valid champion name: ')
-    if champName.lower() in championNames
-        False
-print()
-getWebpage(champName)
+
+while(menu):
+    print()
+    while(validChampion):
+        champName = input('Enter a valid champion name: ')
+        if champName.lower() in championNames:
+            validChampion = False
+    print()
+    getWebpage(champName)
+    menuExit = input('Would you like to search for another champion (y/n)? ')
+    if menuExit == n:
+        menu = False
