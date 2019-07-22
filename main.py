@@ -73,3 +73,5 @@ while(menu):
     menuExit = input('Would you like to search for another champion (y/n)? ')
     if menuExit == 'n':
         menu = False
+    else:
+        validChampion = True
