@@ -60,6 +60,7 @@ def formatChampList(champList):
 
     print(champName + " is Strong against these champions: " + ", ".join(strongAgainst))
     print(champName + " is Weak against these champions: " + ", ".join(weakAgainst))
+    print()
 
 while(menu):
     print()
@@ -70,5 +71,5 @@ while(menu):
     print()
     getWebpage(champName)
     menuExit = input('Would you like to search for another champion (y/n)? ')
-    if menuExit == n:
+    if menuExit == 'n':
         menu = False
