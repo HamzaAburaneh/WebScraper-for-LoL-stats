@@ -6,6 +6,8 @@ def getWebpage(champion):
 
    page = requests.get(url)
 
+   getWinPlayBanRate(page)
+
    return getCounterChampions(page)
 
 def getCounterChampions(page):
@@ -31,14 +33,9 @@ def getWinPlayBanRate(page):
 
      soup = BeautifulSoup(page.text, 'html.parser')
 
-     stats = soup.find_all(class_='StatsTD', string = True)
+     stats = soup.find_all(class_='WinRateStat', string = True)
 
-     for stat in stats:
-       statsList.append(champion.findAll(text = True))
-
-     statsList = [x[0] for x in statsList]
-
-     print(champName + " has a " + statsList[0] + " winrate, " + statsList[1] + " pick rate, " + statsList[2] + " ban rate.")
+     print(champName + " has a " + statsList[0].text + " winrate, " + statsList[1].text + " pick rate, " + statsList[2].text + " ban rate.")
 
 
 def formatChampList(champList):
@@ -49,9 +46,9 @@ def formatChampList(champList):
       if counter < 3:
         weakAgainst.append(x)
         counter += 1
-     else:
-       strongAgainst.append(x)
-       counter += 1
+      else:
+        strongAgainst.append(x)
+        counter += 1
 
     print(champName + " is Strong against these champions: " + ", ".join(strongAgainst))
     print()
