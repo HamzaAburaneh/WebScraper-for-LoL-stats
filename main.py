@@ -1,6 +1,6 @@
 import requests
 from bs4 import BeautifulSoup
-
+ 
 championNames=[
 'aatrox','ahri','akali','alistar','amumu','anivia','annie','ashe','aurelion sol','azir','bard','blitzcrank','brand','braum','caitlyn','camille','cassiopeia',
 'choGath','chogath','corki','darius','diana','dr.Mundo','mundo','draven','ekko','elise','evelynn','ezreal','fiddlesticks','fiora','fizz','galio','gangplank','garen','gnar',
