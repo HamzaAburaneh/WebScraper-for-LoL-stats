@@ -10,7 +10,7 @@ championNames=[
 'quinn','rakan','rammus','reksai','renekton','rengar','riven','rumble','ryze','sejuani','shaco','shen','shyvana','singed','sion','sivir','skarner','sona','soraka','swain',
 'sylas','syndra','tahm kench','taliyah','talon','taric','teemo','thresh','tristana','trundle','tryndamere','twisted fate','twitch','udyr','urgot','varus','vayne','veigar',
 'velKoz','velkoz','vi','viktor','vladimir','volibear','warwick','wukong','wayah','werath','xin zhao','yasuo','yorick','yuumi','zac','zed','ziggs','zilean','zoe','zyra'
-]
+] 
 
 validChampion = True
 menu          = True
