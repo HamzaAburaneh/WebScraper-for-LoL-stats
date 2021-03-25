@@ -4,5 +4,5 @@ This is a web scraper used to scrape popular league database websites to pull st
 Must have requests + bs4 installed.
 try to find new libraries
 when running program you will be prompted for a champion name and it will fetch the data...
-
+ m
 Out of date...
