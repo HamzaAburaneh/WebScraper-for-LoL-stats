@@ -5,3 +5,4 @@ Must have requests + bs4 installed.
 try to find new libraries
 when running program you will be prompted for a champion name and it will fetch the data.
 
+=== Remember to update this ===
